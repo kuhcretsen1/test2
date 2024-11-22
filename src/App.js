@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getUsers, deleteUser } from "./apiMethods";
+import "./styles.css";
 
 function App() {
   const [users, setUsers] = useState([]);
