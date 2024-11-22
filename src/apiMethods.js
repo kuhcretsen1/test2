@@ -10,11 +10,11 @@
 
 import axios from "axios";
 
-const baseUrl = "https://reqres.in/";
+const baseUrl = "https://reqres.in/api";
 
 export const getUsers = async () => {
   try {
-    const response = await axios.get(`${baseUrl}users`);
+    const response = await axios.get(`${baseUrl}/users`);
     return response.data.data;
   } catch (error) {
     console.error("Error fetching users:", error);
@@ -25,10 +25,11 @@ export const getUsers = async () => {
 // Bonus:
 export const deleteUser = async (id) => {
   try {
-    await axios.delete(`${baseUrl}users/${id}`);
+    await axios.delete(`${baseUrl}/users/${id}`);
     return true;
   } catch (error) {
     console.error("Error deleting user:", error);
     return false;
   }
 };
+

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { getUsers, deleteUser } from "./apiMethods";
-import "./styles.css";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -8,16 +7,16 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const fetchUsers = async () => {
-    setLoading(true);
-    const fetchedUsers = await getUsers();
+    setLoading(true); 
+    const fetchedUsers = await getUsers(); 
     setUsers(fetchedUsers);
     setLoading(false);
   };
 
   const handleDelete = async (id) => {
-    const isDeleted = await deleteUser(id);
+    const isDeleted = await deleteUser(id); 
     if (isDeleted) {
-      setUsers(users.filter((user) => user.id !== id));
+      setUsers(users.filter((user) => user.id !== id)); 
     }
   };
 
@@ -29,8 +28,10 @@ function App() {
     <div className="App">
       <h2>Users from API:</h2>
 
+      {/* Кнопка завантаження користувачів */}
       <button onClick={fetchUsers}>Load Users</button>
 
+      {/* Поле для фільтрації */}
       <input
         type="text"
         placeholder="Filter by name"
@@ -39,6 +40,7 @@ function App() {
         style={{ margin: "10px 0" }}
       />
 
+      {/* Відображення стану "завантаження" */}
       {loading ? (
         <p>Loading...</p>
       ) : (

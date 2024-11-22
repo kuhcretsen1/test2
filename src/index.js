@@ -13,20 +13,11 @@
   Bonus 2: Make a filter box to filter the displayed users by name.
 */
 
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { getUsers /* bonus:, deleteUser*/ } from "./apiMethods";
+import App from "./App"; 
 
 import "./styles.css";
 
-function App() {
-  return (
-    <div className="App">
-      <h2>Users from API:</h2>
-      <div></div>
-    </div>
-  );
-}
-
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<App />, rootElement); 
